@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'Carbon_Example' do
+  pod 'Carbon', :path => '../'
+
+  pod 'MagazineLayout'
+  pod 'SwipeCellKit'
+  
+  target 'Carbon_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

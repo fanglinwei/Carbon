@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "KyotoArashiyama.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

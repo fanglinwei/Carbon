@@ -218,7 +218,7 @@
 				B36E0E84295D8AD700A7C6A3 /* Emoji */,
 				B36E0E97295D8AD800A7C6A3 /* Form */,
 				B36E0EB6295D8AD800A7C6A3 /* Hello */,
-				B36E0EB0295D8AD800A7C6A3 /* Jenga */,
+				B36E0EB0295D8AD800A7C6A3 /* Setting */,
 				B36E0EA6295D8AD800A7C6A3 /* Kyoto */,
 				B36E0EBB295D8AD800A7C6A3 /* KyotoSwiftUI */,
 				B36E0E89295D8AD700A7C6A3 /* Pangram */,
@@ -344,16 +344,15 @@
 			path = Kyoto;
 			sourceTree = "<group>";
 		};
-		B36E0EB0295D8AD800A7C6A3 /* Jenga */ = {
+		B36E0EB0295D8AD800A7C6A3 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				B36E0EFE295D8F5500A7C6A3 /* Badge */,
 				B36E0EB1295D8AD800A7C6A3 /* JengaActionItem.swift */,
 				B36E0EB2295D8AD800A7C6A3 /* JengaViewController2.swift */,
 				B36E0EB3295D8AD800A7C6A3 /* JengaViewController.swift */,
-				B36E0EB4295D8AD800A7C6A3 /* NavigationBadgeRow.swift */,
-				B36E0EB5295D8AD800A7C6A3 /* NavigationBadgeContent.swift */,
 			);
-			path = Jenga;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		B36E0EB6295D8AD800A7C6A3 /* Hello */ = {
@@ -394,6 +393,15 @@
 				B36E0EC5295D8AD800A7C6A3 /* HomeViewController.swift */,
 			);
 			path = Top;
+			sourceTree = "<group>";
+		};
+		B36E0EFE295D8F5500A7C6A3 /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				B36E0EB4295D8AD800A7C6A3 /* NavigationBadgeRow.swift */,
+				B36E0EB5295D8AD800A7C6A3 /* NavigationBadgeContent.swift */,
+			);
+			path = Badge;
 			sourceTree = "<group>";
 		};
 		E309BA4BAE89B6392D17A81E /* Pods */ = {

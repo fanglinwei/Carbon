@@ -1,7 +1,12 @@
 import Foundation
 
+public protocol PropertyReload {
+    
+    func update(_ setHandler: @escaping ()->Void)
+}
+
 @propertyWrapper
-public struct State<Value>: BindingConvertible {
+public struct State<Value>: BindingConvertible, PropertyReload {
     
     internal var location: AnyLocation<Value>
     
@@ -19,10 +24,16 @@ public struct State<Value>: BindingConvertible {
             let old = location.value
             location.value = newValue
             observer.send(Changed(old: old, new: newValue))
+            observer.setHandler?()
         }
     }
     
     private let observer = ObserverTargetActions()
+    
+    
+    public func update(_ setHandler: @escaping () -> Void) {
+        observer.setHandler = setHandler
+    }
     
     public var projectedValue: Binding<Value> {
         Binding(
@@ -66,6 +77,8 @@ extension State {
         }
         
         private var observers: [Action] = []
+        
+        var setHandler: (()->Void)?
         
         func append(observer changed: Changed<Value>, target: AnyObject?, changeHandler: @escaping Changed<Value>.Handler) {
             observers = observers.filter { $0.target != nil }

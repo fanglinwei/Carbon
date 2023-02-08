@@ -16,22 +16,19 @@ final class JengaViewController2: UIViewController, DSLAutoTableCarbon {
         updater: UITableViewUpdater()
     )
     
-    private var row1 = "NavigationRow 1"
+    @State private var row10 = "NavigationRow 9999"
     
-    private var row10 = "NavigationRow 10"
-    
-    private var detail1 = "NavigationRow Detail 1"
+    @State private var detail1 = "NavigationRow Detail 1"
     
     @State private var isTap = false
     
-    private var isRed = true
+    @State private var isRed = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
         tableView.rowHeight = 44
         renderer.updater.reloadRowsAnimation = .none
-        after()
     }
     
     @UnitBuilder
@@ -43,7 +40,10 @@ final class JengaViewController2: UIViewController, DSLAutoTableCarbon {
                 .detailText("detailText")
                 .cellStyle(.value1)
                 .onTap(on: self) { (self) in
-                    print(self, 1)
+                    self.row10 = "NavigationRow" + "\(Int.random(in: 1000 ..< 9999))"
+                    self.detail1 = "NavigationRow Detail 111"
+                    self.isTap = true
+                    self.isRed = false
                 }
                 .height(100)
             
@@ -62,7 +62,7 @@ final class JengaViewController2: UIViewController, DSLAutoTableCarbon {
                     print(isOn)
                 }
                 .height(100)
-                .identified(by: "开关")
+                .identified("开关")
             
             
             NavigationBadgeRow("NavigationRow")
@@ -73,6 +73,7 @@ final class JengaViewController2: UIViewController, DSLAutoTableCarbon {
                 .onTap(on: self) { (self) in
                     print(self, 1)
                 }
+                .identified("NavigationRow Badge")
             
             NavigationRow("NavigationRow")
                 .detailText("detailText")
@@ -128,20 +129,5 @@ final class JengaViewController2: UIViewController, DSLAutoTableCarbon {
         .headerHeight(100)
         .footer("footer")
         .footerHeight(100)
-    }
-    
-    func after() {
-        func r() {
-            setState {
-                row1 = "NavigationRow 1111"
-                detail1 = "NavigationRow Detail 111"
-                row10 = "NavigationRow 10101010"
-                isTap = true
-                isRed = false
-            }
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            r()
-        }
     }
 }

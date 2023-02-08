@@ -23,7 +23,7 @@ public extension Component {
     ///   - id: An identifier to be wrapped.
     ///
     /// - Returns: An identified component wrapping `self` and given `id`.
-    func identified<ID: Hashable>(by id: ID = UniqueIdentifier()) -> IdentifiedComponentWrapper<ID, Self> {
+    func identified<ID: Hashable>(_ id: ID = UniqueIdentifier()) -> IdentifiedComponentWrapper<ID, Self> {
         return IdentifiedComponentWrapper(id: id, wrapped: self)
     }
 
@@ -32,8 +32,8 @@ public extension Component {
     ///   - keyPath: A key path to access an identifier of the `self`.
     ///
     /// - Returns: An identified component wrapping `self` and the `id` that accessed by given key path.
-    func identified<ID: Hashable>(by keyPath: KeyPath<Self, ID>) -> IdentifiedComponentWrapper<ID, Self> {
-        return identified(by: self[keyPath: keyPath])
+    func identified<ID: Hashable>(_ keyPath: KeyPath<Self, ID>) -> IdentifiedComponentWrapper<ID, Self> {
+        return identified(self[keyPath: keyPath])
     }
 }
 

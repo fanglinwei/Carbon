@@ -34,13 +34,13 @@ final class JengaViewController: UIViewController, DSLAutoTableCarbon {
     var unit: [CarbonUnit] {
         
         Header("EXAMPLES1" + header)
-            .identified(by: \.title)
+            .identified(\.title)
         
         JengaActionItem(title: "JengaActionItem 1")
             .onTap(on: self) { (self) in
                 print(self, 1)
             }
-            .identified(by: \.title)
+            .identified(\.title)
         
         JengaActionItem(title: "JengaActionItem 2")
             .onTap(on: self) { (self) in
@@ -62,7 +62,7 @@ final class JengaViewController: UIViewController, DSLAutoTableCarbon {
         WrapperComponent(name) {
             LabelView()
         }
-        .identified(by: "123")
+        .identified("123")
         .with(\.backgroundColor, .green)
         .height(100)
 
@@ -70,7 +70,7 @@ final class JengaViewController: UIViewController, DSLAutoTableCarbon {
             .onTap { (view, data) in
                 print(view, data)
             }
-            .identified(by: "123")
+            .identified("123")
             .with(\.backgroundColor, .green)
             .height(100)
             .update { content in
@@ -82,7 +82,7 @@ final class JengaViewController: UIViewController, DSLAutoTableCarbon {
 
         Section(id: "123") {
             Header("Section")
-                .identified(by: \.title)
+                .identified(\.title)
 
             JengaActionItem(title: "Section item 1")
                 .onTap(on: self) { (self) in

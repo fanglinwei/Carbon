@@ -59,7 +59,8 @@ extension UIViewController {
         jenga_viewDidLoad()
         
         (self as? (any DSLAutoTableCarbon))?.didLayoutTable()
-        (self as? (any DSLAutoTableCarbon))?.render()
+        (self as? (any DSLCarbon))?.render()
+        (self as? (any DSLCarbon))?.bindPropertys()
     }
 }
 

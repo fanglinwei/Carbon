@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
 
         renderer.render {
             Header("EXAMPLES")
-                .identified(by: \.title)
+                .identified(\.title)
 
             HomeItem(title: "👋 Hello") { [weak self] in
                 self?.navigationController?.pushViewController(HelloViewController(), animated: true)

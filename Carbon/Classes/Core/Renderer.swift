@@ -18,13 +18,13 @@ import UIKit
 ///
 ///     renderer.render {
 ///         Label("Cell 1")
-///             .identified(by: \.text)
+///             .identified(\.text)
 ///
 ///         Label("Cell 2")
-///             .identified(by: \.text)
+///             .identified(\.text)
 ///
 ///         Label("Cell 3")
-///             .identified(by: \.text)
+///             .identified(\.text)
 ///     }
 open class Renderer<Updater: Carbon.Updater> {
     /// An instance of adapter that specified at initialized.

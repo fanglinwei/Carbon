@@ -56,7 +56,7 @@ final class FormViewController: UIViewController {
         renderer.render {
             Group {
                 Header("ABOUT")
-                    .identified(by: \.title)
+                    .identified(\.title)
 
                 FormTextField(title: "Name", text: state.name) { [weak self] text in
                     self?.state.name = text
@@ -70,7 +70,7 @@ final class FormViewController: UIViewController {
                     FormTextPicker(texts: Gender.allTexts) { [weak self] text in
                         self?.state.gender = Gender(rawValue: text)
                     }
-                    .identified(by: ID.genderPicker)
+                    .identified(ID.genderPicker)
                 }
 
                 FormLabel(title: "Birthday", text: state.birthday?.longText) { [weak self] in
@@ -81,23 +81,23 @@ final class FormViewController: UIViewController {
                     FormDatePicker(date: state.birthday ?? Date()) { [weak self] date in
                         self?.state.birthday = date
                     }
-                    .identified(by: ID.birthdayPicker)
+                    .identified(ID.birthdayPicker)
                 }
             }
 
             Group {
                 Header("NOTE")
-                    .identified(by: \.title)
+                    .identified(\.title)
 
                 FormTextView(text: state.note) { [weak self] text in
                     self?.state.note = text
                 }
-                .identified(by: ID.note)
+                .identified(ID.note)
             }
 
             Group {
                 Header("DETAILS")
-                    .identified(by: \.title)
+                    .identified(\.title)
 
                 FormSwitch(title: "Show Details", isOn: state.isOpenDetails) { [weak self] isOn in
                     self?.state.isOpenDetails = isOn
@@ -105,7 +105,7 @@ final class FormViewController: UIViewController {
 
                 if state.isOpenDetails {
                     Spacing(12)
-                        .identified(by: ID.detail)
+                        .identified(ID.detail)
 
                     FormTextField(title: "Location", text: state.location) { [weak self] text in
                         self?.state.location = text

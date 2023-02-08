@@ -12,13 +12,13 @@ import DifferenceKit
 ///         footer: Label("Footer"),
 ///         cells: {
 ///             Label("Cell 0")
-///                 .identified(by: \.text)
+///                 .identified(\.text)
 ///
 ///             Label("Cell 1")
-///                 .identified(by: \.text)
+///                 .identified(\.text)
 ///
 ///             Label("Cell 2")
-///                 .identified(by: \.text)
+///                 .identified(\.text)
 ///         }
 ///     )
 public struct Section {

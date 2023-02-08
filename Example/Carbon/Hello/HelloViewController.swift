@@ -26,7 +26,7 @@ final class HelloViewController: UIViewController, DSLCarbon {
     @UnitBuilder
     var unit: [CarbonUnit] {
         Header("GREET")
-            .identified(by: \.title)
+            .identified(\.title)
 
         if isToggled {
             HelloMessage("Jules")
@@ -39,7 +39,7 @@ final class HelloViewController: UIViewController, DSLCarbon {
         }
 
         Footer("👋 Greeting from Carbon")
-            .identified(by: \.text)
+            .identified(\.text)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
